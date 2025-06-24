@@ -97,7 +97,7 @@ export default function ProfilePage() {
         }}
       >
         <Container fluid className="py-5 px-4" style={{ background: '#f8f9fa', minHeight: '100vh' }}>
-          <h4 className="fw-bold text-dark mb-4">👤 Profil Pengguna</h4>
+          <h4 className="fw-bold text-dark mb-4">Profil Pengguna</h4>
           <Row className="g-4">
             <Col md={4}>
               <Card className="p-4 shadow-sm border-0 rounded-4 bg-white">

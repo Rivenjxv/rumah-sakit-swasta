@@ -1,12 +1,15 @@
 import { getUserFromToken } from '../../../utils/auth'
-import allowCors from '../../../utils/cors' // ⬅️ middleware ditambahkan
+import allowCors from '../../../utils/cors'
 
-function handler(req, res) {
-  console.log('req.headers.cookie:', req.headers.cookie)
-  const user = getUserFromToken(req)
+async function handler(req, res) {
+  const user = getUserFromToken(req) // ✅ tidak perlu await lagi
+
   console.log('user from token:', user)
 
-  if (!user) return res.status(401).json({ message: 'Unauthorized' })
+  if (!user) {
+    return res.status(401).json({ message: 'Unauthorized' })
+  }
+
   return res.status(200).json(user)
 }
 
