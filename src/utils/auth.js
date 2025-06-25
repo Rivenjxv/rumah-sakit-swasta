@@ -13,11 +13,12 @@ export function getUserFromToken(req) {
 
     return {
       name: decoded.name || decoded.Nama || '',
-      email: decoded.email || decoded.Email || '',
-      role: decoded.role || decoded.Role || ''
+      email: decoded.email || decoded.Email || decoded.sub || '',
+      role: decoded.role || decoded.Role || '',
     }
   } catch (err) {
     console.error('JWT decode error:', err)
     return null
   }
 }
+
